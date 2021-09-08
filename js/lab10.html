@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Programmingt</title>
+  <meta charset="utf-8">
+<style type="text/css">
+   .yellow {background-color: yellow;}
+   
+   
+        .box {
+            width: 100px;
+            height: 150px;
+            background-color: blue;
+        }
+  
+</style>
+<script type="text/javascript">
+  
+  var movie1= 
+  
+  function useInnerHTML() {
+     var theDiv = document.getElementById("div1");
+      var movie1 = prompt("what movie do you like?");
+ 
+	 theDiv.innerHTML = movie1 + " is a good movie";
+	 theDiv.innerHTML = "I love watching movies" +"<br>"+"This is one of my favorites.";
+	 
+	
+   
+  }
+  
+  
+  function appendMessage() {
+	var div = document.createElement("div");
+	div.className = "box";
+	    
+	document.body.appendChild(div);
+   }
+ </script>
+</head>
+<body>
+        <div id="div1" class="yellow">This is a text</div>
+		<p>
+ <script type="text/javascript"> 
+  useInnerHTML();
+  
+  appendMessage();
+ 
+  </script>
+</p>
+</body>
+</html>

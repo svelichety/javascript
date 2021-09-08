@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+<title>Event Planner product info page</title>
+<meta name=" viewport" content=" width=device-width, initial-scale=1.0">
+<link href="screen.css" rel="stylesheet" type="text/css" media="screen">
+<link href="print1.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript">
+
+        function product(img, desc) {
+            this.image = img;
+            this.description = desc;
+            this.display = displayProduct;
+        }
+        function Prod1() {
+            var prod1 = new product();
+            prod1.image = "images/partypack.jpg";
+            prod1.description = "The Party Pack is a complete kit for any party. It includes decorations, lighting effects guide, disposable theme cameras, cutlery, plates, napkins, cups, punch mix (or recipe), snack supplies (or recipe), tablecloths, theme music (where applicable), invitations, thank-you cards, and a step-by-step guide to planning, putting together,and hosting the event.";
+            prod1.display();
+        }
+        function Prod2() {
+            var prod2 = new product();
+            prod2.image = "images/eventsoftware.jpg";
+            prod2.description = "Due to be released June 2000, this cutting-edge tool will allow the client all the resources and visual aids for their event planning. They will be able to play with decoration themes, listen to theme music, design invitations, thank-you cards, and RSVP cards, use the interactive planning calendar, and much more. This software will bring their event into the millennium with cutting edge technology that is designed to save time and money.";
+            prod2.display();
+        }
+        function Prod3() {
+            var prod3 = new product();
+            prod3.image = "images/eventplan.png";
+            prod3.description = "These booklets include a calendar to map out the event, a step-by-step guide on what is needed for and how to put together a successful, worry-free event, resource information, popular refreshments with recipes, games, and tips to put their event in the record books. The events available include birthdays for all ages, meetings, retreats, parties, vacations, and special occasion celebrations such as graduations, holidays, showers, weddings, and receptions.";
+            prod3.display();
+        }
+        function noProd() {
+            var noProd = new product();
+            noProd.image = "";
+            noProd.description = "No Product Found";
+            noProd.display();
+        }
+        function displayProduct() {
+		document.write("<img src=" + this.image + " alt='organic - india' width='120' height='120'><br>");
+            document.write(this.description);
+           }
+		   function selectproduct() {
+            var firstName = prompt("What is your First name?");
+            var lastName = prompt("What is your Last name?");
+            alert("welcome " + firstName + " " + lastName);
+            var item = prompt("Hello " + firstName + " ,Plaese enter item number of selected product to see product information Ex:(1,2,3)");
+
+            if (item == "1") {
+                Prod1();
+            }
+            else if (item == "2") {
+                Prod2();
+            }
+            else if (item == "3") {
+                Prod3();
+            }
+            else {
+             
+                document.write("Incorrect or No Product Found!");
+            } 
+        }
+
+    </script>
+
+
+
+</head>
+<body>
+<header style="background:url(back.jpg)">
+<img src="logo.png" align="left" alt="logo" width="80px" height="80px">
+<div id="toc">
+<br><br><br><br>
+<nav>
+ 
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="about.html" onclick="confirm('Are you sure you want to know about our company?')">ABOUT US</a></li>
+ <li><a href="new.html">WHAT'S NEW</a></li>
+  
+  <li>  <a href="faq.html" onclick="alert('You are going to view the frequently asked questions about this event planning website\n Is this Ok?')">FAQ</a></li>
+  <li><a href="prod info.html" >PRODUCT INFORMATION</a></li>
+ <li><a href="prod catalog.html" >PRODUCT CATALOG</a></li>
+<li><a href="jobs.html">EMPLOYMENT</a></li>
+ 
+
+ <li><a href="contact.html" >CUSTOMER SERVICE</a></li>
+  
+
+
+	</ul>
+</nav>
+</div>
+</header>
+<section>
+<div id="mainbox">
+<h1 id="title">PRODUCT INFORMATION</h1>
+</div>
+
+<br>
+
+<div class="content1">
+
+<article id="article1">
+                    <div align="left">
+                        <script type="text/javascript">
+                            selectproduct();
+                        </script>
+                    </div>
+                </article>
+				
+</div>
+
+<br> <br><br>
+<hr>
+ <footer>
+ <nav style="background-color:gray">
+ 
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="about.html" onclick="confirm('Are you sure you want to know about our company?')">ABOUT US</a></li>
+ <li><a href="new.html">WHAT'S NEW</a></li>
+  
+  <li>  <a href="faq.html" onclick="alert('You are going to view the frequently asked questions about this event planning website\n Is this Ok?')">FAQ</a></li>
+   <li><a href="prod info.html" >PRODUCT INFORMATION</a></li>
+
+ <li><a href="prod catalog.html" >PRODUCT CATALOG</a></li>
+<li><a href="jobs.html">EMPLOYMENT</a></li>
+ 
+ <li><a href="contact.html" >CUSTOMER SERVICE</a></li>
+  
+
+	</ul>
+</nav>
+</footer>
+
+</body>
+</html>
+

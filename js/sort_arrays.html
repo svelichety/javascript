@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title> 
+		Sort array of objects 
+	</title> 
+</head> 
+		
+<body style = "text-align:center;"> 
+	
+	<h1 style = "color:green;" > 
+		GeeksForGeeks 
+	</h1> 
+	
+	<p id="demo2">GFG_Object = [ <br> 
+		{ "f_name": "Geeks", "l_name": "_1" }, 
+		<br><br> 
+		{ "f_name": "for", "l_name": "_2" }, 
+		<br><br> 
+		{ "f_name": "GFG", "l_name": "_3" } 
+		<br>]; 
+	</p> 
+	
+	<button onClick="fun()"> 
+		sort 
+	</button> 
+	
+	<p id="GFG"></p> 
+	
+	<!-- Script to compare the object and 
+		sort its content -->
+	<script> 
+		function fun() { 
+			function compare(a, b) { 
+				if (a.l_name < b.l_name) 
+					return -1; 
+				if (a.l_name > b.l_name) 
+					return 1; 
+				return 0; 
+			} 
+			var GFG_Object = [ 
+				{ f_name: 'Geeks', l_name: '_2' }, 
+				{ f_name: 'for', l_name: '_1' }, 
+				{ f_name: 'GFG', l_name: '_3' } 
+			]; 
+			
+			GFG_Object.sort(compare); 
+			
+			document.getElementById("GFG").innerHTML 
+					= JSON.stringify(GFG_Object); 
+		} 
+		</script> 
+	</body> 
+</html>					 

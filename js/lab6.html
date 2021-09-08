@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Programming</title>
+<meta charset="utf-8">
+<style>
+      body {
+	     text-align: center;
+		 
+          background-size:cover;
+	     background-image: url('images/movie.jpg'); 
+	     }
+		h1 {
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	position: relative;  
+	font-size: 36px;
+	line-height: 40px;
+	padding: 15px 15px 15px 15px;
+	font-color: color;
+	border-radius: 0 10px 0 10px;
+	background: #fff ;
+} 
+.content
+{
+margin-top:-90px;
+  float:right;
+  width:110px; 
+  height:150px;
+   border-style:solid double;
+  border: 3px solid double;
+}
+th{color:cyan;
+  font-family: times new roman;
+  font-size:1.5em;
+  }
+ 
+		h3{
+		color: color;
+      font-family: comic sans MS;
+}	
+#item
+{
+padding:8px;
+text-align:left;
+font-family: comic sans MS;
+font-size:1.5em;
+color: gold;
+  margin-top : 25px; 
+  width: 400px;  
+  }  
+  table, tr, td, th{
+  text-align:center-left;
+  padding: 5px;
+  margin-left:10px;
+  border: white;
+  border-style: solid;
+  }
+  caption{
+  color: orange;
+  font-size:1.5em;
+  }
+</style>
+
+<script type="text/javascript">
+    
+		
+		var comedy1 = new Movie("Comedy", "Minion 2", "PG-13", 12.99, "images/minion.jpg");
+	  	var comedy2 = new Movie("Comedy", "Ted 2", "R", 34.99, "images/ted.jpg");
+	  	var comedy3 = new Movie("Comedy", "The intern", "R", 20.00, "images/intern.jpg");
+	  	
+        var fiction1 = new Movie("Science Fiction", "Terminator Genesis", "PG-13", 11.99, "images/terminator.jpg");
+	  	var fiction2 = new Movie("Science Fiction", "Jurassic World", "PG-13", 32.09, "images/jurassic.jpg");
+	  	var fiction3 = new Movie("Science Fiction", "Edge of Tomorrow", "PG-13", 22.00, "images/edge.jpg");
+	  	
+		var drama1 = new Movie("Drama", "Concussion", "PG-13", 9.99, "images/conc.jpg");
+	  	var drama2 = new Movie("Drama", "True Story", "R", 11.99, "images/true.jpg");
+	  	var drama3 = new Movie("Drama", "Taken 2", "PG-13", 5.99, "images/taken.jpg");
+	  	
+		var fictions = Array(fiction1, fiction2, fiction3);
+	  	var comedies = Array(comedy1, comedy2, comedy3);
+	  	var dramas = Array(drama1, drama2, drama3);
+	  	var movies_inv = Array(comedies, fictions, dramas);
+			 			  
+</script>
+</head>
+<body>
+    <h1 style = "font color='color'"> Movies Inventory </h1>
+   <div>
+     <section>
+
+	     <script type="text/javascript">
+		 
+		          
+document.write("<table><caption>Number of genres in the inventory: 3</caption><tr><br>");
+	  	for (var i = 0; i < 3; i++){
+	  		document.write("<th>", movies_inv[i][0].genre, "</th>");
+	  	}
+	  	document.write("</tr>");
+	  	for (var i = 0; i < 3; i++){
+	  		document.write("<tr>");
+	  		for(var j = 0; j < 3; j++){
+	  			document.write("<td>");
+	  			movies_inv[j][i].show();
+	  			document.write("</td>");
+	  		}
+	  		document.write("</tr>");
+	  	}
+	  	document.write("</table>","<br>");
+
+		
+	</script>	
+	
+               
+		</section>
+	</div>
+</body>
+</html>

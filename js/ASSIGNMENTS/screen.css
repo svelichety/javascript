@@ -1,0 +1,264 @@
+h1{color:Crimson;}
+h2 {color:crimson; font: bold 5px;}
+h3 {color:red; font-family:Verdana, Times New Roman;
+font-weight: 900; font-style: oblique;}
+h5 {color:red; font-family:Verdana, Times New Roman;}
+body {background-color:honeydew; color:magenta; font-family:comic San MS; font-size:20px; font-style:oblique; font-weight:bold;}
+}
+
+#toc p{ color:green; font: bold 10px; font-family:Verdana, Helvetica; }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: left;
+}
+li:first-child { color: red; }
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+
+}
+
+
+li a:hover {
+    background-color: #111111;
+}
+
+li a:active { color: #E6BD13; text-decoration: none;}
+#article1 { 
+    background-color: lemonchiffon;    
+    border-style: inset;
+	border-width: 5px 5px;
+    border-color: yellow ;
+	-moz-box-shadow: -5px 5px 2px purple;
+   -webkit-box-shadow:  -5px 5px 2px purple;
+    box-shadow: -5px -10px 20px purple outset;
+	font-family: 'Comic San MS', 'Book Antiqua';
+	font-style: oblique;
+	font-size: 18px;
+	border-radius: 10px;
+	padding:10px;	
+	}
+	
+ .content1 .img{
+  float: center-left;
+  height:100px;
+  width:250px;
+  padding:3px 3px 3px 3px;
+  border-style:solid double;
+  border: 3px solid double;
+}
+#content2{
+  float:center;
+  flex-grow: 1;
+  padding: 5px;
+  border-style:solid double;
+  border: 3px solid double;
+}
+
+#fire h1{
+	font: small-caps 115% "Lucida Sans", Arial, Helvetica,
+    sans-serif;
+  letter-spacing: .2em;
+  margin: 0 540px 0 150px;
+  padding: 2.5em 0 .2em 2em;
+  border-bottom: 1px solid black;
+
+   color: #fff;
+   text-shadow: 0 0 5px #fff,
+   0 0 10px #fff,
+   0 0 15px #fff,
+   0 0 20px #ff2d95,
+   0 0 30px #ff2d95,
+   0 0 40px #ff2d95,
+   0 0 50px #ff2d95,
+   0 0 75px #ff2d95;
+   letter-spacing: 5px;}
+   
+   #mainbox {
+	   -moz-flex-direction: column;
+     -webkit-flex-direction: column;
+     display: flex;
+     flex-direction: column;
+     align-content: stretch;
+     justify-content: space-around;
+	 align-items: center;
+		
+display: block;
+width: auto;
+margin: 5px auto;
+padding: 5px;
+text-align: center;
+border: 1px solid #fff;
+background: #ddd;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+border-radius: 20px;
+-moz-box-shadow: rgb(120,120,120) 5px 5px 10px;
+-webkit-box-shadow: rgb(120,120,120) 5px 5px 10px;
+box-shadow: rgb(120,120,120) 5px 5px 10px;
+}
+#title {
+font: bold 20px Chunkfive, verdana, sans-serif;
+text-shadow: rgba(120,120,120,0.5) 3px 3px 5px;
+color: crimson;
+}
+#section1 p { 
+text-align: left;
+}
+#item4
+{
+    margin-left: 0px; 
+    width:50%;
+}
+
+.cols1
+{
+
+-moz-column-count:2; /* Firefox */
+-webkit-column-count:2; /* Safari and Chrome */
+column-count:2
+-moz-column-gap:40px; /* Firefox */
+-webkit-column-gap:40px; /* Safari and Chrome */
+column-gap:40px;
+	box-shadow: 10px -10px 20px green outset;
+	color:hsl(120,100%, 25%);
+  
+}
+
+
+.button {
+    background-color: #4CAF50;
+    border: outset thin;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 1px 1px;
+}
+
+
+	#parentbox {
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+   margin:10px;
+		  background-color: #8B4513;
+		  flex-direction: column;
+			align-content: stretch;
+			justify-content: space-around;
+			align-items: center;
+		
+}
+
+#box-1{
+  flex-grow: 1;
+  background: #eec;
+  margin:15px;
+  padding:15px;
+  
+}
+#box-2{
+   flex-grow: 1;
+  background: #eec;
+  margin: 15px;
+  padding: 15px;
+  
+  }
+#box-3{
+  -moz-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  flex-grow: 1;
+
+  padding: 15px;
+  margin: 15px 20px;
+  }
+  article p:first-of-type::first-letter {
+      color: red;
+      font-size: 3em;
+      float: left;
+      margin: -.25em .05em 0 0; }
+	  
+	  #element::before {
+    content: "ALL PARTY EVENT PLANNER";
+    color: blue;
+}
+ #element1::after {
+    content: "interviewing skills.";
+    color: blue;
+}
+#main_aside {
+}
+.aside1{
+	float:right;
+	width:25%;
+	margin-top: -285px;
+	margin-right: 69px;
+}
+.top {
+	width:65%;
+}
+@media (max-width: 500px) {
+  
+  body {
+	  background-color: yellow;
+	  font:8pt;
+  }
+  h1, h2, h3{ color: coral;
+      font-size: 12pt;
+  }
+  figcaption { display:none;}
+  p {
+     color: midnightblue;
+	 background-color: lightpink;
+     font-size: 10pt;
+     font-weight: bold;
+    }
+	img {display:none;
+	}
+	ol {display:none;
+	}
+	nav { float:none;
+	     font-size:10px;
+	}
+	.cols2 {width:30%;}
+	
+}
+@media (min-width: 850px) {
+  p {
+     color: green;
+     font-size: 16pt;
+     font-weight: bold;
+    }
+	h1, h2, h3{ color: coral;
+      font-size: 18pt;
+  }
+  img { border: 5px inset green }
+}
+#sec1 p::first-line {
+    color: #ff0000;
+    font-size: 22pt;
+}
+table {
+	align:center;
+    border: 5px solid #ff0000;
+     width: 50%;
+    height: 200px;
+	color: green;
+}
+th, tr, td {
+    border: 3px solid blue;
+   
+}

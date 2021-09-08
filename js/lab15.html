@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab15</title>
+    <style>
+        #Div1 {
+            width: 80%;
+            height: 30%;
+			left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+             padding: 25px;
+            text-align: center;
+            background-color: skyblue;
+            border: 5px solid;
+            border-radius: 50px;
+			 box-shadow: 5px 10px #888888;
+
+        }
+    </style>
+
+</head>
+<body style="background-image: url('images/kids.jpg'); background-repeat: no repeat; background-size:cover;">
+    <div id="Div1"></div>
+    <script>
+	
+	    function Link(url, name) {
+            this.url = url;
+            this.name = name;
+        }
+
+        var link1 = new Link("http://www.youtube.com/", "YOUTUBE");
+        var link2 = new Link("https://www.youtubekids.com", "YOUTUBE KIDS");
+        var link3 = new Link("https://www.netflix.com", "NETFLIX");
+        var link4 = new Link("https://www.babytv.com", "BABY TV");
+        var link5 = new Link("https://www.abcmouse.com/", "ABC MOUSE");
+        var links = new Array(link1, link2, link3, link4, link5);
+
+        function load() {
+            var currentMinute = new Date().getSeconds();
+            var index = currentMinute % links.length;
+            var myDiv = document.getElementById("Div1");
+            myDiv.innerHTML = "<h1>Click on the link to see a website.</h1><h1> &#x1F337;  <a href='" + links[index].url + "'>" + links[index].name + "</a>  &#x1F337;</h1>";
+        }
+		load();	
+		setInterval(load, 1000);
+	</script>
+</body>
+</html>

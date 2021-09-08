@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+body{
+background-color: yellow;
+font-family:serif;
+font-size: 1.2em;
+color: blue;
+}
+</style>
+
+
+
+<script type="text/javascript">
+
+    
+	function enterText(text1){
+      var reg_exp = /\w+/;
+     var reg_exp1 =  /^([^0-9]*)$/;
+	 var reg_exp2 = /[A-Z][a-z]+\s/;
+        var reg_exp3 = /\#\d{5}\.\d/;
+
+
+     //var reg_exp2 = 
+     var result1 = reg_exp.test(text1);
+    var result2 = reg_exp1.test(text1);
+     var result3 = reg_exp2.test(text1);
+var result4 = reg_exp3.test(text1);
+
+results = [result1,result2,result3,result4];
+finalResult = [];
+
+for (i=0;i<4;i++) {
+if (results[i]==true) {
+finalResult[i]="Text is mathcing."}
+else {finalResult[i] = "not a Match!"};
+};
+
+  
+document.body.innerHTML = '';
+
+         document.write("<h2>The text is: ", text1, "</h2>"); 
+      document.write("<p>Match a string that contains at least one character in A-Z, a-z, 0-9 and _<br>",finalResult[0],"<br><br>"); 
+   
+     document.write("Match a string that does not contain a number between 0 and 9 <br>",finalResult[1],"<br><br>");
+    document.write("Search for an uppercase letter, followed by one or more lowercase letter, followed by a space<br>",finalResult[2],"<br><br>");
+document.write("Find a #sign, followed by exactly 5 repeating digits, a period, and another digit<br>",finalResult[3],"<br><br></p>");
+};
+
+function enterLoop() {          
+   setTimeout(function () {  
+   
+      var text1 = prompt("Enter a text(stop to exit):");
+	  
+	  
+      enterText(text1); 
+	  document.body.style.background = "yellow";
+	 document.body.style.color= "blue";
+	  document.body.style.fontFamily = "serif";
+   
+	   if (text1!="stop") {   
+         enterLoop();   
+      }	 	  
+   }, 300);   
+}
+
+</script>
+
+
+</head>
+
+<body onload="enterLoop()">
+
+
+
+</body>
+
+</html>

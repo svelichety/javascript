@@ -1,0 +1,85 @@
+<html>
+<style>
+body{
+      background-color: black;
+    }
+    div{
+      background-color: gray;
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      top: 15%;
+      left: 13%;
+    }
+    h1{
+      color: white;
+      text-align: center;
+    }
+    textarea{
+      background-color: lightgray;
+      width: 50%;
+      height: 30%;
+      position: absolute;
+      top: 10%;
+      left: 25%;
+      font-size: 20px;
+      border-radius: 10px;
+    }
+    #count{
+      position: absolute;
+      top: 40%;
+      left: 25%;
+      color: white;
+      font-size: 25px;
+    }
+    #code{
+      position: absolute;
+      top: 48%;
+      left: 25%;
+      color: white;
+      font-size: 20px;
+    }
+	h1{
+	color: yellow;
+	font-size: 30px;
+	}
+	</style>
+
+<script>
+count = 0
+	function message(text){
+		if(count == 140) return;
+		var charCode = text.keyCode;
+		document.getElementById("code").innerText = "last key in ASCII code: "+charCode;
+		count++;
+		document.getElementById("count").innerText = 140-count +" characters";
+		if(count == 140) 
+		document.getElementById("count").innerText = "0 character. Please Stop now."
+	}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Programming</title>
+  <meta charset="utf-8">
+    <script type="text/javascript" src="EventUtil.js"></script>
+</head>
+<body>
+<h1> MY MESSAGE </h1><br>
+<div>
+    <form id="myForm">
+        <textarea rows="4" cols=40" id="textarea" maxlength="140" onkeypress="message(event)"></textarea>
+ 
+ <p id="count">140 characters</p>
+ <p class="inlinedis" id="code">Last key in ASCII code: 
+ <span id="code"></span>
+    </p>
+ 
+  </div>     
+    </form>
+   
+</body>
+</html>
+
+</html>

@@ -1,0 +1,9 @@
+a:after {
+content: " (" attr(href) ") ";
+}
+@media print {
+    body {
+        font-family: "Times New Roman", Times, serif;
+        background-color: white;
+    }
+}

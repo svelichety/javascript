@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CIS 89C: Client Side Programming
+  with JavaScript</title>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+	    
+	var newWin = window.open("", "newWin", "height=1000,width=1000,location,menubar,toolbar,status,resizable");
+	var w = newWin.screen.width;
+    var h = newWin.screen.height;
+	
+	newWin.document.write("height = " + newWin.screen.height);
+newWin.document.write("<br>");
+newWin.document.write("width = " + newWin.screen.width);
+newWin.document.write("<br>");
+
+  
+	 var newWidth = (1 / 3) * w;
+           var newHeight = (1 / 3) * h;
+     
+	
+	
+	newWin.document.write("<body style='background:yellow; color: blue; font-family: helvetica;'>");
+	newWin.document.write("The appName is: " + newWin.navigator.appName);
+
+	newWin.document.write("The appCodeName is: " + newWin.navigator.appCodeName +"<br><br>");
+	newWin.document.write("The appVersion is: " + newWin.navigator.appVersion+"<br><br>");
+newWin.document.write("The userAgent is: " + newWin.navigator.userAgent+"<br><br>");
+newWin.document.write("The language is: " + newWin.navigator.language+"<br><br>");
+newWin.document.write("The platform is: " + newWin.navigator.platform+"<br><br>");
+
+
+	  newWin.document.write("mimeTypes length: " + newWin.navigator.mimeTypes.length + "<br><br>");
+for (var i=0; i<newWin.navigator.mimeTypes.length; i++) {
+newWin.document.write("description: " + newWin.navigator.mimeTypes[i].description + "<br>");
+newWin.document.write("plugin: " + newWin.navigator.mimeTypes[i].enabledPlugin + "<br>");
+newWin.document.write("type: " + newWin.navigator.mimeTypes[i].type + "<br>");
+newWin.document.write("suffixes: " + newWin.navigator.mimeTypes[i].suffixes + "<br>");
+}
+newWin.document.write("plugins length: " + newWin.navigator.plugins.length + "<br><br>");
+for (var i=0; i<newWin.navigator.plugins.length; i++) {
+newWin.document.write("name: " + newWin.navigator.plugins[i].name + "<br>");
+newWin.document.write("filename: " + newWin.navigator.plugins[i].filename + "<br>");
+newWin.document.write("description: " + newWin.navigator.plugins[i].description + "<br>");
+newWin.document.write("length: " + newWin.navigator.plugins[i].length + "<br>");
+}
+	
+	setTimeout(function () { newWin.resizeTo(newWidth, newHeight); }, 3000);
+  	
+	
+  </script>
+</head>
+<body style= " background-color: lightyellow;">
+<h1 style="text-align:center; color: gold;">Watch the Navigator properties </h1></body>
+
+</html>

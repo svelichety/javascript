@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab18-Javascript</title>
+    <style>
+        body {
+            background-image: url("images/lab18.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1 {
+            color: yellow;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+		hover a {
+    color : "white";
+}
+       
+        #container1 {
+            display: flex;
+            padding: 1px;
+            border: 2px solid;
+        }
+        #divLeft {
+            width: 400px;
+            height: 500px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid;
+            background: white;
+        }
+
+        #divRight {
+            width: 800px;
+            height: 500px;
+            padding: 20px;
+            text-align: right;
+            border: 2px solid;
+			background:gray;
+            background-image: url("18_0.jpg");
+            background-size: 100% 100%;
+        }
+
+       
+        #div1 {
+            font-size: 30px;
+            color: yellow;
+            text-shadow: 0 0 2px black;
+           
+        }
+		
+	#div1:hover {
+  color: gray;
+}	
+       
+    </style>
+</head>
+<body> 
+
+
+    <h1 style="text-align: center;">National Geographic Contest</h1>
+
+        <div id="container1">
+
+            <div id="divLeft">
+                <br>
+                <a id="div1" onmouseover="switch1('Tiger In Zoo', 'images/img1.jpg')"
+                     onmouseout="switch1('', 'images/img4.jpg')">First Winner</a><br><br>
+                <a id="div1" onmouseover="switch1('Water in Ocean', 'images/img2.jpg')"
+                     onmouseout="switch1('', 'images/img4.jpg')">Second Winner</a><br><br>
+                <a id="div1" onmouseover="switch1('Elephant on Ride', 'images/img3.jpg')"
+                     onmouseout="switch1('', 'images/img4.jpg')">Third Winner</a>
+                <h3> </h3>
+            </div>
+            <div id="divRight"></div>
+
+        </div>
+   
+
+    <script>
+	
+	
+	
+        function switch1(text, image) {
+		      var divRight = document.getElementById('divRight');
+            divRight.style.backgroundImage = "url('" + image + "')";
+         var descriptionLable = document.getElementsByTagName('h3')[0];
+				descriptionLable.innerHTML = "<h3 style='color:green'; font-family:'Helvetica'><br><br><br>" +text;
+
+
+        }
+		
+
+       
+
+
+    </script>
+</body>
+</html>

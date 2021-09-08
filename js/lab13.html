@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript function to create random background color</title>
+  
+  <style>
+div {
+width:60%;
+ color:white;
+  font-size:17pt;
+  transform: translate(-50%, -50%);
+  font-family:"Helvetica";
+  text-shadow: 2px 2px grey;
+  text-transform: uppercase;
+border-color:black;
+  border-width: 8px;
+  border-style: solid;
+  border-radius: 0px 175px;
+  padding: 10px;
+  text-align:center;
+  margin:auto;
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  
+ }
+</style>
+
+
+
+</head>
+<body>
+
+<div id="div1">
+<p>Backgroud-color is randomly generated</p>
+<p id="p1"><a href="javascript:random_bg_color()"><br>Click to random</a></p>
+</div>
+
+<script>
+function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+   
+
+var hex_x = x.toString(16);
+var hex_y = y.toString(16);
+var hex_z = z.toString(16);
+
+
+var bgcolor = [x, y, z];
+var bgcolor = "rgb(" + bgcolor.join() + ")";
+var hexcolor = [hex_x,hex_y,hex_z];
+
+for (i=0;i<3;i++) {
+  if (hexcolor[i].length < 2){
+  hexcolor[i] = "0" + hexcolor[i];}
+}
+
+var hexcolor = "#" + hexcolor.join("");
+
+var div = document.getElementById('div1');
+
+div.style.background = hexcolor;
+
+
+var newp1 = document.createElement("p");
+	newp1.id = "newp1";
+	newp1.className = "box";
+   var p1 = document.getElementById("p1");
+   div.insertBefore(newp1, p1);
+   document.getElementById('newp1').innerHTML =  bgcolor;
+   
+   var newp2 = document.createElement("p");
+	newp2.id = "newp2";
+	newp2.className = "box";
+   var p1 = document.getElementById("p1");
+   div.insertBefore(newp2, p1);
+   document.getElementById('newp2').innerHTML =  "HEX:" + hexcolor;
+	
+}
+
+random_bg_color();
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+<title>Event Planner Catalog Page</title>
+<meta name=" viewport" content=" width=device-width, initial-scale=1.0">
+<link href="screen.css" rel="stylesheet" type="text/css" media="screen">
+<link href="print1.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript">
+
+     function Event(type, name, image, desc, qty, price){
+			this.type = type;
+			this.name = name;
+			this.image = image;
+			this.desc = desc;
+			this.qty = qty;
+			this.price = price;
+			this.show = function () {
+                document.write("<td>" + this.name + "</td>");
+                document.write("<td><img src='" + this.image + "'height='100px'></td>");
+                document.write("<td>" + this.desc + "</td>");
+                document.write("<td>" + this.qty + "</td>");
+                document.write("<td>" + this.price + "</td>");
+                 }
+			}
+
+		var Event1 = new Event("Packages", "Hollywood Glam", "images/event1.jpg", " Walk the red carpet and have paparazzi snap your photo.", "200", "$3200");	
+		var Event2 = new Event("Packages", "Arcade Night", "images/event2.jpg", "Includes all supplies, and 1 event host to oversee setup and takedown.", "150", "1-5");
+		var Event3 = new Event("Decor", "Balloon Centerpieces", "images/event3.jpg", "2 centerpieces (~3 ft high)", "", "$140");
+		var Event4 = new Event("Decor", "Classic Decorations", "images/event4.jpg", "An assortment of decorations pending on your theme.", "per kit", "$1050");
+		var Event5 = new Event("food", "Appetizers", "images/event5.jpg", "Super Bowl - Deviled eggs, mini sandwiches, chips with assorted dips, tater tots, veggie platter, popcorn bar, brownies", "200 - 300 min", "$1050*");
+		var Event6 = new Event("food", "California Buffet", "images/event6.jpg", "Onsite chef and real dinnerware", "150 - 1000", "$3000*");
+		var Event7 = new Event("food", "Turkey Dinner", "images/event7.jpg", "Book a Thanksgiving Feast for your team. It will leave your team giving thanks for you!", "150 - 250", "$1500*");
+
+		
+		var packages = Array(Event1, Event2);
+		var decor = Array(Event3, Event4);
+		var food = Array(Event5, Event6, Event7);
+		var all = Array(packages, decor, food);
+	</script>
+
+
+
+</head>
+<body>
+<header style="background:url(back.jpg)">
+<img src="logo.png" align="left" alt="logo" width="80px" height="80px">
+<div id="toc">
+<br><br><br><br>
+<nav>
+ 
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="about.html" onclick="confirm('Are you sure you want to know about our company?')">ABOUT US</a></li>
+ <li><a href="new.html">WHAT'S NEW</a></li>
+  
+  <li>  <a href="faq.html" onclick="alert('You are going to view the frequently asked questions about this event planning website\n Is this Ok?')">FAQ</a></li>
+  <li><a href="prod info.html" >PRODUCT INFORMATION</a></li>
+
+
+ <li><a href="contact.html" >CUSTOMER SERVICE</a></li>
+  
+
+
+	</ul>
+</nav>
+</div>
+</header>
+<section>
+<div id="mainbox">
+<h1 id="title">PRODUCT INFORMATION</h1>
+</div>
+
+<br>
+
+<div class="content1">
+
+<article id="article1">
+                    <div align="left">
+                       <script type="text/javascript">
+		document.write("<table><tr><th>Type</th><th>Title</th><th>Picture</th><th>Description</th><th>Minimum Number of People</th><th>Price</th></tr>");
+	  	for (var i = 0; i < all.length; i++){	  		
+	  		for(var j = 0; j < all[i].length; j++){
+	  			document.write("<tr>");
+	  			if (j == 0){
+	  				document.write("<td rowspan='", all[i].length, "'>", all[i][j].type, "</td>");
+	  			}
+	  			all[i][j].show();	
+	  			document.write("</tr>");
+	  		}	  		
+	  	}
+	  	document.write("</table>");
+	</script>
+
+                    </div>
+                </article>
+				
+</div>
+
+<br> <br><br>
+<hr>
+ <footer>
+ <nav style="background-color:gray">
+ 
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="about.html" onclick="confirm('Are you sure you want to know about our company?')">ABOUT US</a></li>
+ <li><a href="new.html">WHAT'S NEW</a></li>
+  
+  <li>  <a href="faq.html" onclick="alert('You are going to view the frequently asked questions about this event planning website\n Is this Ok?')">FAQ</a></li>
+   <li><a href="prod info.html" >PRODUCT INFORMATION</a></li>
+
+
+ <li><a href="contact.html" >CUSTOMER SERVICE</a></li>
+  
+
+	</ul>
+</nav>
+</footer>
+
+</body>
+</html>
+

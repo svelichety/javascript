@@ -1,0 +1,35 @@
+
+<html>
+
+<script type="text/javascript">
+
+function enterText() {
+
+      var text1 = prompt("Enter text ?");
+      //var text2 = "What does Pete like?";
+      var reg_exp = /\w/;
+      var reg_exp1 =  /[^0-9]/;
+     //var reg_exp2 = 
+     var result1 = reg_exp.test(text1);
+     var result2 = reg_exp1.test(text1);
+       document.write("<h3>The text is: ", text1, "</h3>"); 
+      document.write("<p>Match a string that contains at least one character in A-Z, a-z, 0-9 and _", "</p>"); 
+
+     if (result1) {<script type="text/javascript">
+      document.write("It's a match");} else {
+      document.write("No match");
+      } 
+     document.write("<p>Match a string that does not contain a number between 0 and 9 ", "</p>");
+     if (result2) {
+     document.write("It's a match");
+     } else {
+     document.write("No match");
+      }   
+    }
+</script>
+<body>
+<script type="text/javascript">
+enterText();
+</script>
+</body>
+</html>

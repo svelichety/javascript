@@ -1,0 +1,84 @@
+<style>
+body{
+background-image: url("images/lab17.jpg");
+   background-size: cover; 
+   background-repeat: no-repeat; 
+}
+#Div {
+            width: 1000px;
+            height: 400px;
+            margin: auto;
+            position: absolute;
+			top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+#Div1 {
+            width: auto;
+            height: auto;
+            margin: auto;
+		    
+            background-color: orange;
+            border: 3px solid;
+            border-radius: 30px;
+            border-color: tomato;
+            opacity: 0.8;
+            font-size: 40px;
+            padding: 10px;
+        }
+        input {
+            font-size: 30px;
+            color: red;
+            background-color: cyan;
+            border-color: lime;
+        }
+</style>
+
+<script type="text/javascript">
+var messages = ["Welcome to my Page.", "Hey, Its you again!", "Oh.. You are not getting what you want?", "Its quite surprising..", "You must be curious", "What are you looking for?", "Please ask someone for help?", "I see you again", "This page dont have anything other than this.", " I see you losing your patience..Please wait"];
+
+
+
+function UpdateNotice(){
+
+   var myCookie = document.cookie;
+            var cookie1 = myCookie.indexOf("cookie_count");
+            if (cookie1 == -1) {
+                document.cookie = "cookie_count=1; expires=" + new Date(Date.now() + (24*60*60*1000)).toUTCString() + ";";
+                document.getElementById("Div1").innerHTML = "You have visited 1 time(s). " + messages[0];
+            } else {
+                var end = myCookie.indexOf(";", cookie1);
+                var count = parseInt(myCookie.substring(cookie1, end).split("=")[1]) + 1;
+                var index = count;
+                if (index > messages.length) {
+                    index = (index - 2 ) % (messages.length - 1) + 1;
+                } else {
+                    index = index - 1;
+                }
+                document.getElementById("Div1").innerHTML = "You have visited " + count + " time(s). " + messages[index];
+                document.cookie = "cookie_count=" + count + "; expires=" + new Date(Date.now() + (24*60*60*1000)).toUTCString() + ";";
+            }
+			}
+function resetCookie() {
+            document.cookie = "cookie_count=; expires=" + new Date().toUTCString() + ";";
+            var myElement = document.getElementById("Div1");
+            myElement.innerHTML = "You have visited 1 time(s). " + messages[0];
+            location.reload();
+        }
+
+</script>
+</head>
+<body onload="UpdateNotice()">
+
+
+<FORM id= "Div">
+<div>
+ <div id="Div1"></div><br>
+<INPUT TYPE="button"  value="Revisit Page" name="Revisit Page" onclick="location.reload()">
+<INPUT TYPE="button" value="Reset counter" name= "Reset Counter" onclick="resetCookie()">
+</div>
+</FORM>
+</body>
+</html>

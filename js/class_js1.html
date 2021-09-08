@@ -1,0 +1,35 @@
+<html>
+<head>
+<script>
+function add(a, b, callback){
+document.write(`summ of ${a} and ${b}: ${a+b}` + "<br>")
+callback()
+}
+
+function display(){
+document.write("this is printed after addition"+"<br>")
+}
+
+add(3, 4, display)
+
+
+
+var g1 = new Date()
+var g2 = new Date(2019, 5, 4, 12, 59,04)
+
+if(g1.getTime() === g2.getTime()){
+document.write("both are equal")
+}
+
+else if (g1.getTime() > g2.getTime()){
+document.write("g1 is greater")}
+else if (g1.getTime() < g2.getTime()) {
+document.write("g2 is greater")
+}
+
+</script>
+</head>
+<body>
+<h1> </h1>
+</body>
+</html>

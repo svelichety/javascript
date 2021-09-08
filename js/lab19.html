@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 19</title>
+	<style>
+	 body{
+      background-color: lightgray;
+    }
+    #selectbox{
+      position: absolute;
+      left: 40%;
+    }
+    #picframe{
+      position: absolute;
+      top: 120px;
+      left: 20px;
+      width: 95%;
+      height: 85%;
+    }
+	
+	
+	</style>
+    <script>
+        var Eventbox1 = {
+            animals: ["Panda", "Tiger", "Elephant"],
+            nature: ["Fall", "Sunrise", "Beach"]
+        }
+        var Eventbox2 = {
+            Panda: "images/a1.jpg",
+            Tiger: "images/a2.jpg",
+            Elephant: "images/a3.jpg",
+            Fall: "images/n1.jpg",
+            Sunrise: "images/n2.jpg",
+            Beach: "images/n3.jpg"
+        }
+
+        function showOption(name) {
+            var Options = '<option value="" disabled selected>Images</option>';
+            for (categoryId in Eventbox1[name]) {
+                Options += "<option>" + Eventbox1[name][categoryId] + "</option>";
+            }
+            document.getElementById("category").innerHTML = Options;
+        }
+
+        function picFrame() {
+            var imagename = document.getElementById('category').value;
+            document.getElementById("picframe").src = Eventbox2[imagename];
+        }
+
+       
+    </script>
+   
+</head>
+
+<body>
+    <div style="text-align:center;" id ="selectbox">
+        <form>
+            <select size="3"  id="selectId" onChange="showOption(this.value);">
+                <option value="" selected>National Geography</option>
+                <option value="animals">Animal</option>
+                <option value="nature">Nature</option>
+            </select>
+
+            <select size="4" id="category" onchange="picFrame()">
+                <option value="" disabled selected>Images</option>
+            </select>
+        </form>
+    </div>
+    <div id= "framebox" >
+            <iframe id="picframe" src="" width='1000px' height='1000px' ></iframe>
+    </div>
+</body>
+
+</html>

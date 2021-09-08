@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Chapter 7: Question 1</title>
+ <style>
+div {
+width:60%;
+ color:blue;
+  font-size:20pt;
+  transform: translate(-50%, -50%);
+  font-family:"serif";
+  border-color:black;
+ border-bottom-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+ border: 1px solid;
+  padding: 20px;
+  box-shadow: 5px 10px #888888;
+text-align:center;
+  margin:auto;
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  
+ }
+ 
+.img_1 {
+  background-image: url("images/birthday.jpg");
+   background-size: cover; 
+   background-repeat: no-repeat; 
+  }
+</style>
+<script>
+var month = prompt("What month were you born in?");
+var date = prompt("What day were you born in?");
+var year = prompt("What year were you born in?");
+var date_input = [year, month, date];
+var my_date = date_input.join();
+
+var my_date = new Date(Date.parse(my_date));
+var today_date = new Date();
+days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+months = ["January", "February", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+
+format_date = days[today_date.getDay()] + ", " +months[today_date.getMonth()] + today_date.getDate() + ", "+today_date.getFullYear()+", "+ today_date.getHours() +":"+ today_date.getMinutes()+":"+today_date.getSeconds();
+
+format_birth = months[my_date.getMonth()] +" "+ my_date.getDate() + ", "+my_date.getFullYear();
+
+var diff_date = today_date - my_date;
+var num_years = Math.floor(diff_date/31536000000);
+var next_age = num_years + 1;
+
+var num_days = Math.floor(diff_date/86400000);
+var num_hours = Math.floor((diff_date %86400000)/3600000); 
+var num_minutes =Math.floor(((diff_date% 86400000)%3600000)/60000); 
+var num_seconds = Math.floor((((diff_date% 86400000)%3600000)%60000)/1000); 
+
+
+
+</script>
+
+</head>
+
+
+<body class="img_1">
+<div id="div" class="box">
+
+
+
+<h1>My Age</h1>
+
+</div>
+
+<script>
+var div = document.getElementById('div');
+
+
+var new1 = document.createElement("p");
+    new1.id = "new1";
+    new1.className = "box";
+   div.appendChild(new1);
+   document.getElementById("new1").innerHTML = "Today is "+format_date;
+   
+   var new2 = document.createElement("p");
+    new2.id = "new2";
+    new2.className = "box";
+   div.appendChild(new2);
+   document.getElementById("new2").innerHTML = "I was born on "+format_birth + ".(" + my_date.toLocaleDateString() +")";
+   
+var thisyear = today_date.getFullYear();
+var nextyear = today_date.getFullYear()+1;
+var nextbirth = my_date;
+
+nextbirth.setYear(thisyear);
+
+if (nextbirth>=today_date) {
+var count = nextbirth - today_date;
+}else {
+nextbirth.setYear(nextyear);
+var count = nextbirth - today_date;
+}
+   
+   
+var count_days = Math.floor(count/86400000);
+var count_hours = Math.floor((count % 86400000)/3600000); 
+var count_minutes = Math.floor(((count % 86400000)%3600000)/60000); 
+var count_seconds = Math.floor((((count % 86400000)%3600000)%60000)/1000); 
+   
+   
+var new3 = document.createElement("p");
+new3.id = "new3";
+new3.className = "box";
+div.appendChild(new3);
+document.getElementById("new3").innerHTML = "I am "+num_years+" years old, and will turn "+ next_age + " in: <br>" + count_days + " days, " + count_hours + " hours, " + count_minutes +" minutes, " + count_seconds + " seconds.";
+   
+var new4 = document.createElement("p");
+new4.id = "new4";
+new4.className = "box";
+div.appendChild(new4);
+document.getElementById("new4").innerHTML = "I have been alive for... <br>"+ num_days + " days, " + num_hours + " hours, " + num_minutes +" minutes, " + num_seconds + " seconds.";
+   
+ </script>
+</body>
+
+</html>
+
+

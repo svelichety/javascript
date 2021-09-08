@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Java script programming</title>
+  	<meta charset="utf-8">
+  		<script type="text/javascript">
+	  	function Movie(title, actor){
+	  		this.title = title;
+	  		this.actor = actor;
+	  	}
+	  	var movies = new Movie("http://www.ironman.com/#axzz5eVsYSr4d", "https://en.wikipedia.org/wiki/Robert_Downey_Jr.");
+	  	var myWin = window.open("", "myWin","top=100,height=400,width=500,resizable");
+	  	var movieWin = null;
+	  	var actorWin = null;
+	  	myWin.document.write("<body style='text-align: center; background-image:url(images/iron.jpg);background-repeat:no-repeat;background-size:cover;color: skyblue;'>");
+	  	myWin.document.write("<h1 style='color:yellow;'>What about the Movie?</h1><br>");
+		myWin.document.write("<p style='font-size:1.2em; font-family: times new roman;'>Genius. Billionaire. Playboy. Philanthropist. Tony Stark's confidence is only matched by his high-flying abilities as the hero called Iron Man.<br><br><br>");
+		myWin.document.write("<a style='color:white' href='javascript:popMovie()'>Click here to open Movie Window</a><br>");
+		myWin.document.write("<a style='color:white' href='javascript:popActor()'>Click here to open Actor Window</a><br>");
+		myWin.document.write("<a style='color:white' href='javascript:closeMovieWin()'>Click here to close Movie Window</a><br>");
+		myWin.document.write("<a style='color:white' href='javascript:closeActorWin()'>Click here to close Actor Window</a><br>");
+		myWin.document.write("<a style='color:white' href='javascript:closeMyWin()'>Click here to close This Window</a><br>");
+		
+		
+		myWin.popMovie = function(){
+			movieWin = window.open(movies.title, "movieWin", "height=500,width=800,left=500,resizable");
+			movieWin.focus();
+		}
+		
+	
+		myWin.popActor = function(){
+			actorWin = window.open("", "actorWin", "height=300,width=400,left=500,top=800,resizable");
+			actorWin.focus;
+			actorWin.document.write("<h1 style='color: blue;'>Robert Downey</h1>");
+			actorWin.document.write("<p style='color: red; font-family: helvetica;'>Robert John Downey Jr. (born April 4, 1965)[2] is an American actor and singer. His career has included critical and popular success in his youth, followed by a period of substance abuse and legal difficulties, and a resurgence of commercial success in middle age. For three consecutive years from 2012 to 2015, Downey topped the Forbes list of Hollywood's highest-paid actors, making an estimated $80 million in earnings between June 2014 and June 2015.</p><br>");
+			actorWin.document.write("<a href='javascript:moreInfo()'>More Information</a>");
+			actorWin.moreInfo = function(){
+				myWin.location.replace(movies.actor);
+				myWin.focus();
+			}		
+				}
+		
+		myWin.closeMovieWin = function(){
+			movieWin.close();
+		}
+		myWin.closeActorWin = () => {
+		actorWin.close();
+		}
+		myWin.closeMyWin = function(){
+			myWin.close();
+		}
+	</script>	
+</head>
+
+<body style="text-align: center; background-image: url('images/iron.jpg'); background-repeat:no-repeat;background-size:cover; color: green; font-family: Arial;">
+	<h1>Iron Man movie </h1>	
+	</body>
+</html>

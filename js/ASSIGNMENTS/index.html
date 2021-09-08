@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Event Planner Home Page</title>
+<meta name=" viewport" content=" width=device-width, initial-scale=1.0">
+<link href="screen.css" rel="stylesheet" type="text/css" media="screen">
+<link href="print1.css" rel="stylesheet" type="text/css" media="print">
+</head>
+<body>
+<div>
+<header style="background:url(back.jpg)">
+<img src="logo.png" align="left" alt="logo" width="80px" height="80px">
+ <div id="fire">
+<h1 align="center">Welcome for All Party Event Planner</h1>
+</div>
+<br><br><br>
+<nav>
+ 
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="about.html" onclick="confirm('Are you sure you want to know about our company?')">ABOUT US</a></li>
+ <li><a href="new.html">WHAT'S NEW</a></li>
+  
+  <li>  <a href="faq.html" onclick="alert('You are going to view the frequently asked questions about this event planning website\n Is this Ok?')">FAQ</a></li>
+  <li><a href="prod info.html" >PRODUCT INFORMATION</a></li>
+ <li><a href="prod catalog.html" >PRODUCT CATALOG</a></li>
+ <li><a href="jobs.html">EMPLOYMENT</a></li>
+ 
+ <li><a href="contact.html" >CUSTOMER SERVICE</a></li>
+ 
+
+	</ul>
+</nav>
+</div>
+</header>
+<br>
+<section>
+
+<article id="article1" >
+<div style= "text-align:center; ">
+
+
+    <div id="realTimeClock"></div>
+    <div id="greeting"></div><br>
+    <div id="quote"></div><br>
+   </div>
+<div>   
+	
+	<div id="calendar"></div>
+
+
+    <script>
+	<a href="https://linkpeek.com"
+  onmouseover="document.getElementById('place-holder-1').src='https://linkpeek.com/api/v1?uri=http%3A//linkpeek.com&apikey=9fhvyH9KP&token=ada234417193f502523a7d1da2ef1501&size=336x336';"
+  onmouseout="document.getElementById('place-holder-1').src='/theme/img/linkpeek-transparent-pixel-placeholder.png';"
+>
+  website screenshot service
+  <img src="/theme/img/linkpeek-transparent-pixel-placeholder.png" id="place-holder-1" style="zindex: 100; position: absolute;" />
+</a>
+
+        var greets = ["What are you doing that early?", "Good Morning!", "Good Afternoon!", "Good Evening!"];
+        var greets_bgColors = ["red","yellow","greem","blue"];
+        var quotes = ["The big secret in life is there is no secret.",
+            "Whatever your goal. You can get there if you’re willing to work.",
+            "People are just as happy as they make up their minds to be.",
+            "Be who you are and say what you feel, because those who mind don’t matter, and those who matter don’t mind.",
+            "Your present circumstances never determine where you go but where you have started.",
+            "The meaning of life is to find yourself a gift, the purpose of life is to give it away.",
+            "Happiness is not something ready made. It comes from your own actions",
+            "If you don’t like something, change it. If you can’t change it, change your attitude. Don’t complain."];
+      
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+
+        var quote = document.getElementById("quote");
+        quote.innerHTML = "<h2>Quote of the day:</h2>" + quotes[Math.floor(Math.random() * quotes.length)]+"<br><br>";
+
+  
+  function update() {
+  var month = "4";
+var date = "13";
+var year = "2019";
+var date_input = [year, month, date];
+var my_date = date_input.join();
+
+var my_date = new Date(Date.parse(my_date));
+
+            var today = new Date();
+			var diff_date = today - my_date;
+
+format_date = days[today_date.getDay()] + ", " +months[today_date.getMonth()] + today_date.getDate() + ", "+today_date.getFullYear()+", "+ today_date.getHours() +":"+ today_date.getMinutes()+":"+today_date.getSeconds();
+
+var num_days = Math.floor(diff_date/86400000);
+var num_hours = Math.floor((diff_date %86400000)/3600000); 
+var num_minutes =Math.floor(((diff_date% 86400000)%3600000)/60000); 
+var num_seconds = Math.floor((((diff_date% 86400000)%3600000)%60000)/1000); 
+
+           
+		   var realTimeClock = document.getElementById("realTimeClock");
+            realTimeClock.innerHTML = diff_date.toString();
+
+            var hour = diff_date.getHours();
+            var greet = document.getElementById("greet");
+            var greet_Index = Math.floor(hour/6);
+            greeting.innerHTML = greets[greet_Index];
+            greeting.style.backgroundColor = greets_bgColors[greet_Index];
+
+            var year = diff_date.getFullYear();
+            var month = diff_date.getMonth();
+            var day = diff_date.getDate();
+
+            if (isLeapYear(year)) {
+                daysInMonth[1] = 29;
+            }
+
+            var startLoc = new Date(year, month, 1).getDay() % 7;
+
+               var count = 0;
+            for (var i = 0; i < startLoc; i++) {
+                calendar += "<td></td>";
+                count++;
+            }
+           
+            }
+            
+
+        function isLeapYear(year) {
+            return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+        }
+
+        update();
+        setInterval(update, 1000);
+
+    </script>
+</div>
+
+<p id="element">
+ specializes in creating beautiful and unique Weddings, Social Engagements and Corporate Events. We provide a multitude of services ranging from Day-of to Full Service Event Coordination, and everything in between. Your coordinator will collaborate with you to produce an unforgettable event that will be tailored to you and your vision. During a complimentary initial consultation, you will have the opportunity to look through our portfolios, learn more about our services and ask any questions you may have. Once we determine what services are needed through this consultation, a proposal will be created and customized especially to your needs.
+ </p>
+ </article>
+ <br>
+ <div id="box-2">
+ <h3> Services we include are the following: <h3>
+ <article>
+ <pre>
+   1. Weddings
+   2. Birthdays
+   3. Corporate Events
+   4. Engagements
+   5. Social Gatherings
+   etc.,
+   </pre>
+   </article>
+   </div>
+   </section>
+ <hr>
+  <footer>
+ <nav style="background-color:gray">
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="about.html" onclick="confirm('Are you sure you want to know about our company?')">ABOUT US</a></li>
+ <li><a href="new.html">WHAT'S NEW</a></li>
+  
+  <li>  <a href="faq.html" onclick="alert('You are going to view the frequently asked questions about this event planning website\n Is this Ok?')">FAQ</a></li>
+  <li><a href="prod info.html" >PRODUCT INFORMATION</a></li>
+ <li><a href="prod catalog.html" >PRODUCT CATALOG</a></li>
+ <li><a href="jobs.html">EMPLOYMENT</a></li>
+ 
+ <li><a href="contact.html" >CUSTOMER SERVICE</a></li>
+ 
+
+	</ul>
+	
+</nav>
+</footer>
+</body>
+</html>

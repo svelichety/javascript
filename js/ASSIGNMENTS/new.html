@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+<title>Event Planner new items page</title>
+<meta charset="utf-8">
+<link href="screen.css" rel="stylesheet" type="text/css" media="screen">
+<link href="screen.css" rel="stylesheet" type="text/css" media="print">
+<style>
+   
+
+    #newPic{
+      font-size:28px; 
+      font-weight:900; 
+      color: red; 
+      width:260px;
+      height:260px;  
+      text-align:center; 
+	  background-color:gold; 
+      position:absolute;
+      top:30%;
+      left:20%;
+    }</style>
+	
+	
+	
+</head>
+<body>
+<header style="background:url(back.jpg)">
+<img src="logo.png" align="left" alt="logo" width="80px" height="80px">
+<br><br><br><br>
+<nav>
+ 
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="about.html" onclick="confirm('Are you sure you want to know about our company?')">ABOUT US</a></li>
+ <li><a href="new.html">WHAT'S NEW</a></li>
+  
+  <li>  <a href="faq.html" onclick="alert('You are going to view the frequently asked questions about this event planning website\n Is this Ok?')">FAQ</a></li>
+ 
+  <li><a href="prod info.html" >PRODUCT INFORMATION</a></li>
+ <li><a href="prod catalog.html" >PRODUCT CATALOG</a></li>
+<li><a href="jobs.html">EMPLOYMENT</a></li>
+ 
+ <li><a href="contact.html" >CUSTOMER SERVICE</a></li>
+  
+
+	</ul>
+</nav>
+</div>
+</header>
+<section>
+
+<div id="newPic" >
+   <h1>This is What's new today</h1>
+      <img src="images/event3.jpg" width="70%" height="65%" >
+  </div>
+  <script type="text/javascript">
+    var box = document.getElementById("newPic");
+    document.body.addEventListener("click", function(event){
+     
+      var cx = event.clientX;     
+      var cy = event.clientY;
+      var px = event.pageX;     
+      var py = event.pageY;     
+      
+      box.style.left = cx+"px";
+	   box.style.top = py+"px";
+     
+    }, false); 
+</script>
+<div id="mainbox">
+<h1 id="title">WHAT'S NEW ABOUT THE WEBSITE</h1>
+</div>
+
+<br>
+
+
+
+</article>
+<br clear><br>
+<div id ="item1, box-1">
+			<article id = "article1">
+			<div class = "content1">
+			<img class="img" src="Event-Planning-Challenges3.jpg">
+			<h1>MAJOR CHALLENGES FACED IN PLANNING AN EVENT AND THEIR SOLUTIONS</h1>
+            <time datetime="2018-09-23T17:00" style="color:gray">
+             5PM on Sep 23rd
+            </time>
+			<p>
+            Planning a corporate event can be an overwhelming task for those with no prior event planning experience. Great organizational skills are required to plan a corporate and these skills develop with experience. That said, planning can also be fun and it’s incredibly rewarding when you manage to pull off a successful event. Whether you are planning a product launch event of your company or organizing a conference, you are bound to face challenges in organizing the event. Unforeseen mishaps, scheduling 
+             </p>			
+             </div>
+			 
+			 
+			 
+			 
+			 
+
+			</article>
+			
+			</div>
+</section>
+<br>
+<br><br><br><br><br>
+<hr>
+<footer>
+ <nav style="background-color:gray">
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="about.html" onclick="confirm('Are you sure you want to know about our company?')">ABOUT US</a></li>
+ <li><a href="new.html">WHAT'S NEW</a></li>
+  
+  <li>  <a href="faq.html" onclick="alert('You are going to view the frequently asked questions about this event planning website\n Is this Ok?')">FAQ</a></li>
+ 
+  <li><a href="prod info.html" >PRODUCT INFORMATION</a></li>
+ <li><a href="prod catalog.html" >PRODUCT CATALOG</a></li>
+<li><a href="jobs.html">EMPLOYMENT</a></li>
+ 
+ <li><a href="contact.html" >CUSTOMER SERVICE</a></li>
+  
+
+	</ul>
+
+</nav>
+</footer>
+</body>
+</html>
