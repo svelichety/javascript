@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Programming</title>
+<meta charset="utf-8">
+<style>
+      body {
+	     text-align: center;
+		 
+          background-size:cover;
+	     background-image: url('images/movie.jpg'); 
+	     }
+		h1 {
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	position: relative;  
+	font-size: 36px;
+	line-height: 40px;
+	padding: 15px 15px 15px 15px;
+	color: #355681;
+	border-radius: 0 10px 0 10px;
+	background: #fff ;
+} 
+.content
+{
+margin-top:-90px;
+  float:right;
+  width:110px; 
+  height:150px;
+   border-style:solid double;
+  border: 3px solid double;
+}
+th{color:cyan;
+  font-family: times new roman;
+  font-size:1.5em;
+  }
+ 
+		h3{
+		color: yellow;
+      font-family: comic sans MS;
+}	
+#item
+{
+padding:8px;
+text-align:left;
+font-family: comic sans MS;
+font-size:1.5em;
+color: gold;
+  margin-top : 25px; 
+  width: 400px;  
+  }  
+  table{
+  text-align:center-left;
+  padding: 5px;
+  margin-left:10px;
+  border: red;
+  border-style: solid double;
+  }
+  caption{
+  color: orange;
+  font-size:1.5em;
+  }
+</style>
+
+<script type="text/javascript">
+
+      
+var myWin = window.open("", "myWin", "width=500,height=300,top=325,resizable,dependent");
+      myWin.document.write("<body style='background:gold'>");
+	  
+	   myWin.document.write("<script> function loadURL(url){  window.opener.location.href = url; window.close();}<\/script>");
+	  
+	
+      myWin.document.write("<h1>Cruise Hot deals!!!</h1>");
+      myWin.document.write("<a href='javascript:opener.displayList(opener.cruiseList)'>display the cruises</a>");
+	  myWin.document.write("<br><a href=\"javascript:loadURL('https://www.royalcaribbean.com')\">Royal Carribean</a><br>");
+     myWin.document.write("<a href=\"javascript:loadURL('https://www.carnival.com')\">Carnival</a><br>");
+      myWin.document.write("<a href=\"javascript:loadURL('https://disneycruise.disney.go.com/')\">Disney Cruise</a>");
+    
+      
+      
+	  function setFocus() {
+	  
+	  myWin = window.open("", "myWin", "width=500,height=300,top=325,resizable,dependent");
+	 
+	  myWin.focus();
+	} 
+	
+            function Cruise(cruise_Date,cruise_Destination,cruise_Description,cruise_URL,ship_Name,ship_Description,ship_URL,price){
+            this.cruise_Date = cruise_Date;
+            this.cruise_Destination = cruise_Destination;
+            this.cruise_Description = cruise_Description;
+            this.cruise_URL = cruise_URL;
+            this.ship_Name = ship_Name;
+            this.ship_Description = ship_Description;
+            this.ship_URL = ship_URL;
+            this.price = price;
+        }
+
+    var cruise1 = new Cruise('30 Mar 2019','3 Nights Bahamas','When the moon lights up the night sky, entertainment awakens here. Enjoy our traditional music in quaint bars, the latest sounds in city-style nightclubs, or try your hand in a casino.','https://www.bahamas.com','Carnival Legend','Bimini Sands Resort & Marina sits on a private white sandy beach, offering 215 one, two, and three-bedroom condos with full kitchens, washer, dryer, hair dryers, microwave ovens, coffee makers, TV, patios, and toiletries. ','https://www.carnival.com/cruise-ships/carnival-legend.aspx','$580'),
+            cruise2 = new Cruise('11 April 2019','3 Day Baja Mexico from LA','However you spend it, you’ll definitely remember your wedding day forever. Carnival helps folks make fun memories every day, so just imagine what we can do for a festive event like your wedding. Picture your wedding photos with a blue sea-sky background or white-sand beach behind you…','https://www.carnival.com/','Carnival Inspiration','And then there’s the honeymoon — is a Carnival cruise the world’s best honeymoon? Only if you like fine dining, entertainment, exotic locations and comfy staterooms… ','https://www.carnival.com/cruise-ships/carnival-inspiration.aspx','$1500'),
+            cruise3 = new Cruise('13 Sep 2019','7 Nights Eastern Caribbean Cruise','Explore mysterious Mayan ruins in Costa Maya, Mexico. Snorkel through some of the worlds most breathtaking reefs off the coast of Belize. Climb up Dunns River Falls in Ocho Rios, Jamaica. A Western Caribbean cruise is perfect for the adventurous at heart.','https://www.cruisesonly.com','Disney Fantasy','the Disney Fantasy is a masterpiece of design and engineering boasting Art Nouveau allure alongside modern technological advancements.','https://disneycruise.disney.go.com/ships/fantasy/','$3000');
+    var cruiseList = [cruise1,cruise2,cruise3];
+     function displayList(cruises){
+            document.write('<head><style>table, th, td {border: 2px solid white; color: yellow; font-size:1.2em; }th{ background-color: black;}</style></head>');
+            document.write('<body style="background-image:url(images/cruise.jpg);background-repeat:no-repeat;background-size:cover">');
+            document.write('<div style="margin-left: auto;margin-right: auto;width:800px">');
+            document.write('<br/><br/><br/><br/><br/>');
+            document.write('<h1 style="text-align:center;color:black">Display Cruises</h1>');
+            document.write('<table style="width:800px;">');
+            document.write('<tr><th>DEPARTS</th><th>DESTINATION</th><th>SHIP</th><th>PRICE</th></tr>');
+			
+            for (var i = 0; i < cruises.length; i++) {
+                var list = cruises[i];
+                document.write('<tr><td>');
+                document.write(list.cruise_Date);
+                document.write('</td><td>');
+                document.write('<a href=\'javascript:loadDesc("');
+
+                document.write(list.cruise_Description);
+                document.write('","')
+                document.write(list.cruise_URL);
+
+                document.write('")\'>');
+                document.write(list.cruise_Destination);
+                document.write('</a></td><td>');
+                document.write('<a href="javascript:loadDesc(\''+list.ship_Description+'\',\''+list.ship_URL+'\')">'+list.ship_Name+'</a>');
+                document.write('</td><td>');
+                document.write(list.price);
+                document.write('</td></tr>');
+            }
+
+            document.write('</table>');
+            document.write('</div>');
+            document.write('</body>');
+
+        }
+		
+        function loadDesc(description,URL){
+		myWin = window.open("", "myWin1", "width=500,height=300,top=350,resizable,dependent");
+             setTimeout(function(){
+                myWin.document.write('<p>'+description+'</p><a href="javascript:popupWindow(\''+URL+'\')">Click for more info</a>');
+                myWin.focus();
+				myWin.popupWindow = function(URL){
+                    var popup = myWin.opener.open(URL,"popupWindow","height=400,width=500,left=400,resizable,scrollable");
+                    popup.focus();
+                }
+            },100);
+			}
+
+		
+		
+    
+	  
+	  </script>
+	  <body>
+    <h1> Welcome</h1>
+   <div>
+     <section>
+	     
+               
+		</section>
+	</div>
+</body>
+</html>
